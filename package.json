@@ -1,18 +1,18 @@
 {
   "name": "@galacean/appx-adapter",
-  "version": "0.1.1",
+  "version": "0.0.2",
   "description": "Galacean Effects 的小程序/小游戏等适配器",
   "files": [
     "dist"
   ],
   "exports": {
     "./weapp": {
-      "import": "./dist/weapp/index.js",
+      "import": "./dist/weapp/index.mjs",
       "require": "./dist/weapp/index.js",
       "types": "./dist/weapp/index.d.ts"
     },
     "./alipay": {
-      "import": "./dist/alipay/index.js",
+      "import": "./dist/alipay/index.mjs",
       "require": "./dist/alipay/index.js",
       "types": "./dist/alipay/index.d.ts"
     }
@@ -29,7 +29,7 @@
   },
   "scripts": {
     "prebuild": "pnpm clean",
-    "build": "pnpm build:module",
+    "build": "pnpm build:module && rollup -c",
     "build:module": "tsc",
     "lint": "eslint --ext .ts .",
     "lint:fix": "eslint --fix --ext .ts .",

@@ -24,7 +24,7 @@ export function atob (input: string) {
     // character found in table? initialize bit storage and add its ascii value;
     ~buffer &&
       (
-        // @ts-expect-error
+        //@ts-expect-error
         (bs = bc % 4 ? bs * 64 + buffer : buffer),
         // and if not first of each 4 characters,
         // convert the first 8 bits to one ascii character

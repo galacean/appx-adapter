@@ -79,3 +79,4 @@ platform.createOffscreenCanvas = my.createOffscreenCanvas;
 platform.createSelectorQuery = my.createSelectorQuery;
 platform.getSystemInfoSync = my.getSystemInfoSync;
 platform.request = my.request;
+

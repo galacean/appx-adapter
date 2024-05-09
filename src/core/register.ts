@@ -95,12 +95,17 @@ async function getCanvasById (id: string) {
       // @ts-expect-error
       .select(id)
       .node()
-      // @ts-expect-error
+      //@ts-expect-error
       .exec(res => {
         try {
           const canvas = res[0].node;
 
-          resolve(canvas);
+          if (canvas) {
+            resolve(canvas);
+          } else {
+            reject(`create canvas fail, canvas is ${canvas}`);
+          }
+
         } catch (e) {
           reject(`Cannot find canvas by id: ${id}, ${e}`);
         }

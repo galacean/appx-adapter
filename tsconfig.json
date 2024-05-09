@@ -20,7 +20,7 @@
     "forceConsistentCasingInFileNames": true,
     "allowSyntheticDefaultImports": true,
     "moduleResolution": "node",
-    "module": "CommonJS",
+    "module": "ESNext",
     "target": "ES5",
     "lib": [
       "DOM",
