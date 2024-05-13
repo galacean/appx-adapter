@@ -6,6 +6,12 @@ const _requestHeader = new WeakMap();
 const _responseHeader = new WeakMap();
 const _requestTask = new WeakMap();
 
+const contentTypes = {
+  json: 'application/json',
+  text: 'application/text',
+  arraybuffer: 'application/octet-stream',
+};
+
 function _triggerEvent (type: string, event = {}) {
   event.target = event.target || this;
 
@@ -105,11 +111,15 @@ export class XMLHttpRequest extends EventTarget {
       let responseType = this.responseType;
       let dataType = this.dataType;
 
+      if (contentTypes[responseType] && !header['content-type']) {
+        header['content-type'] = contentTypes[responseType];
+      }
       const relative = _isRelativePath(url);
       let encoding;
 
       if (responseType === 'arraybuffer') {
-        // encoding = 'binary'
+        // 避免被默认转换为JSON
+        dataType = 'arrayBuffer';
       } else {
         encoding = 'utf8';
       }
@@ -160,7 +170,9 @@ export class XMLHttpRequest extends EventTarget {
         _triggerEvent.call(this, 'loadend');
       };
 
-      const onFail = ({ errMsg }) => {
+      const onFail = e => {
+        const errMsg = e.message || e.errorMessage;
+
         // TODO 规范错误
         if (resolved) { return; }
         resolved = true;

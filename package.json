@@ -7,12 +7,12 @@
   ],
   "exports": {
     "./weapp": {
-      "import": "./dist/weapp/index.mjs",
+      "import": "./dist/weapp/index.js",
       "require": "./dist/weapp/index.js",
       "types": "./dist/weapp/index.d.ts"
     },
     "./alipay": {
-      "import": "./dist/alipay/index.mjs",
+      "import": "./dist/alipay/index.js",
       "require": "./dist/alipay/index.js",
       "types": "./dist/alipay/index.d.ts"
     }
@@ -29,7 +29,7 @@
   },
   "scripts": {
     "prebuild": "pnpm clean",
-    "build": "pnpm build:module && rollup -c",
+    "build": "pnpm build:module && cp -Rf ./dist ../galacean-effects-alipay-miniprogram-demo/node_modules/@galacean/appx-adapter",
     "build:module": "tsc",
     "lint": "eslint --ext .ts .",
     "lint:fix": "eslint --fix --ext .ts .",
