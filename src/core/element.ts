@@ -4,7 +4,7 @@ export class Element extends Node {
   className: string;
   children: Element[];
 
-  [props: string]: any,
+  [props: string]: any
 
   constructor () {
     super();

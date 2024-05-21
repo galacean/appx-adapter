@@ -26,6 +26,10 @@ export class URL {
     }
     this.href = host + url;
   }
+
+  static revokeObjectURL () {
+
+  }
 }
 
 function _arrayBufferToBase64 (buffer: ArrayBuffer) {

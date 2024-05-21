@@ -32,4 +32,5 @@ export const platform = {
   createImage: () => { },
   createSelectorQuery: () => { },
   request: (object: any) => { },
+  downloadFile:(url: any) => {},
 };

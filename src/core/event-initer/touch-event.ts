@@ -31,6 +31,9 @@ function mapEvent (event: any) {
     event.x = clientX;
     event.y = clientY;
   }
+  if (!event.target) {
+    event.target = getCanvas();
+  }
 }
 
 function eventHandlerFactory (type: string) {

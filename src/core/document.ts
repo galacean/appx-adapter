@@ -4,7 +4,7 @@ import type { Event } from './event';
 import { HTMLElement } from './html-element';
 import { HTMLVideoElement } from './html-video-element';
 import { Image } from './image';
-import { getCanvas, isMiniGame, registerCanvas, registerOffscreenCanvas } from './register';
+import { getCanvas, isMiniGame, registerOffscreenCanvas } from './register';
 
 class DocumentElement extends HTMLElement {
   constructor () {

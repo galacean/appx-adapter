@@ -71,6 +71,7 @@ export const window = {
   dispatchEvent (event: Event) {
     document.dispatchEvent(event);
   },
+  AlipayJSBridge: my,
 };
 
 platform.createCanvas = my.createCanvas;

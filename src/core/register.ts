@@ -68,7 +68,6 @@ export function registerOffscreenCanvas (canvas: any, elementLevel?: number) {
   Mixin.parentNode(canvas, elementLevel ?? 0);
   Mixin.style(canvas);
   Mixin.classList(canvas);
-  Mixin.clientRegion(canvas);
   Mixin.offsetRegion(canvas);
 
   canvas.focus = function () { };
@@ -93,14 +92,16 @@ async function getCanvasById (id: string) {
   return new Promise((resolve, reject) => {
     platform.createSelectorQuery()
       // @ts-expect-error
-      .select(id)
-      .node()
+      .select(id).node()
+      .select(id).boundingClientRect()
       //@ts-expect-error
       .exec(res => {
         try {
           const canvas = res[0].node;
+          const rect = res[1];
 
           if (canvas) {
+            canvas.getBoundingClientRect = () => rect;
             resolve(canvas);
           } else {
             reject(`create canvas fail, canvas is ${canvas}`);

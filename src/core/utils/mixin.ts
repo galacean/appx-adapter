@@ -80,8 +80,8 @@ export function clientRegion (obj: Record<string, any>) {
       return {
         x: 0,
         y: 0,
-        top: 0,
-        left: 0,
+        top: obj.top || 0,
+        left: obj.left || 0,
         width: this.clientWidth,
         height: this.clientHeight,
         right: this.clientWidth,
