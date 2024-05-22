@@ -32,5 +32,11 @@ export const platform = {
   createImage: () => { },
   createSelectorQuery: () => { },
   request: (object: any) => { },
-  downloadFile:(url: any) => {},
+  downloadFile:(options: any) => {},
+  createVideoContext: (id: string) => {},
+  startDeviceMotionListening: (object: any) => {},
+  stopDeviceMotionListening:() => {},
+  onDeviceMotionChange: (listener: (event: any) => void) => {},
+  offDeviceMotionChange:  (listener: (event: any) => void) => {},
+
 };

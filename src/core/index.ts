@@ -1,5 +1,6 @@
 export * from './event-initer';
 export * from './platform';
+export * from './accelerometer';
 export * from './atob';
 export * from './blob';
 export * from './body';
