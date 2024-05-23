@@ -5,8 +5,9 @@ export class Accelerometer {
 
   handleDeviceMotionChange (event: any) {
     document.dispatchEvent({
-      ...event,
-      beta: - event.beta,
+      alpha: event.alpha,
+      gamma:  event.gamma,
+      beta:  - event.beta,
       type: 'deviceorientation',
     });
   }
