@@ -1,0 +1,74 @@
+{
+  "name": "@galacean/appx-adapter",
+  "version": "0.2.0",
+  "description": "Galacean Effects 的小程序/小游戏等适配器",
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    "./weapp": {
+      "import": "./dist/weapp/index.js",
+      "require": "./dist/weapp/index.js",
+      "types": "./dist/weapp/index.d.ts"
+    },
+    "./alipay": {
+      "import": "./dist/alipay/index.js",
+      "require": "./dist/alipay/index.js",
+      "types": "./dist/alipay/index.d.ts"
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "weapp": [
+        "./dist/weapp/index.d.ts"
+      ],
+      "alipay": [
+        "./dist/alipay/index.d.ts"
+      ]
+    }
+  },
+  "scripts": {
+    "prebuild": "pnpm clean",
+    "build": "pnpm build:module",
+    "build:module": "tsc",
+    "lint": "eslint --ext .ts .",
+    "lint:fix": "eslint --fix --ext .ts .",
+    "check:ts": "tsc -b ./tsconfig.check.json",
+    "clean": "rimraf dist",
+    "prepare": "husky install",
+    "prepublishOnly": "pnpm build"
+  },
+  "browserslist": [
+    "iOS 9"
+  ],
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "@mini-types/alipay": "^3.0.12",
+    "@types/wechat-miniprogram": "^3.4.7",
+    "@typescript-eslint/eslint-plugin": "^7.10.0",
+    "@typescript-eslint/parser": "^7.10.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-compat": "^4.2.0",
+    "eslint-plugin-promise": "^6.1.1",
+    "husky": "^9.0.11",
+    "lint-staged": "^11.2.6",
+    "pnpm": "^8.15.7",
+    "rimraf": "^3.0.2",
+    "typescript": "^5.3.3"
+  },
+  "contributors": [
+    {
+      "name": "云垣"
+    },
+    {
+      "name": "十弦"
+    }
+  ],
+  "author": "Ant Group CO., Ltd.",
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  }
+}
