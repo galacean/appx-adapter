@@ -19,11 +19,19 @@ export class URL {
 
   // todo: 完善URL对象
   constructor (url: string, host = '') {
+    // 如果 URL 是绝对的，则直接使用它
     if (url.indexOf('http://') == 0 || url.indexOf('https://') == 0) {
       this.href = url;
 
       return;
     }
+    // 如果是相对地址
+    // 移除基础 URL 的文件名部分（如果有）
+    host = host.substring(0, host.lastIndexOf('/') + 1);
+    // 移除相对 URL 的 "./" 部分（如果有）
+    url = url.startsWith('./') ? url.substring(2) : url;
+
+    // 拼接两个部分以构建绝对 URL
     this.href = host + url;
   }
 
