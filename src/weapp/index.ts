@@ -1,6 +1,6 @@
-export * from '../core';
 import {
-  platform, atob,
+  platform,
+  atob,
   btoa,
   document,
   navigator,
@@ -29,6 +29,7 @@ import {
   WebGL2RenderingContext,
 } from '../core';
 
+export * from '../core';
 export const window = {
   innerWidth: screen.availWidth,
   innerHeight: screen.availHeight,

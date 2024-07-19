@@ -73,13 +73,15 @@ export const window = {
   },
 };
 
-platform.createCanvas = my.createCanvas;
-platform.createImage = my.createImage;
-platform.createOffscreenCanvas = my.createOffscreenCanvas;
-platform.createSelectorQuery = my.createSelectorQuery;
-platform.getSystemInfoSync = my.getSystemInfoSync;
-platform.request = my.request;
-platform.startDeviceMotionListening = my.startDeviceMotionListening;
-platform.stopDeviceMotionListening = my.stopDeviceMotionListening;
-platform.onDeviceMotionChange = my.onDeviceMotionChange;
-platform.offDeviceMotionChange = my.offDeviceMotionChange;
+platform.createCanvas = (tt as any).createCanvas;
+platform.createImage = (tt as any).createImage;
+platform.createOffscreenCanvas = (tt as any).createOffscreenCanvas;
+platform.createSelectorQuery = tt.createSelectorQuery;
+platform.getSystemInfoSync = (tt as any).getSystemInfoSync;
+platform.request = tt.request;
+platform.createVideoContext = tt.createVideoContext;
+platform.downloadFile = tt.downloadFile;
+platform.startDeviceMotionListening = (tt as any).startDeviceMotionListening;
+platform.stopDeviceMotionListening = (tt as any).stopDeviceMotionListening;
+platform.onDeviceMotionChange = (tt as any).onDeviceMotionChange;
+platform.offDeviceMotionChange = (tt as any).offDeviceMotionChange;

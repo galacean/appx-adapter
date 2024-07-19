@@ -28,7 +28,8 @@
       "ESNext"
     ],
     "types": [
-      "@mini-types/alipay"
+      "@mini-types/alipay",
+      "@douyin-microapp/typings"
     ]
   },
   "include": [

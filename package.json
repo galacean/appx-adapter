@@ -15,6 +15,11 @@
       "import": "./dist/alipay/index.js",
       "require": "./dist/alipay/index.js",
       "types": "./dist/alipay/index.d.ts"
+    },
+    "./douyin": {
+      "import": "./dist/douyin/index.js",
+      "require": "./dist/douyin/index.js",
+      "types": "./dist/douyin/index.d.ts"
     }
   },
   "typesVersions": {
@@ -24,6 +29,9 @@
       ],
       "alipay": [
         "./dist/alipay/index.d.ts"
+      ],
+      "douyin": [
+        "./dist/douyin/index.d.ts"
       ]
     }
   },
@@ -44,6 +52,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
+    "@douyin-microapp/typings": "^1.2.3",
     "@mini-types/alipay": "^3.0.12",
     "@types/wechat-miniprogram": "^3.4.7",
     "@typescript-eslint/eslint-plugin": "^7.10.0",
@@ -70,5 +79,8 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "polyfill-crypto.getrandomvalues": "^1.0.0"
   }
 }
