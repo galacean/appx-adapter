@@ -27,3 +27,4 @@ export * from './url';
 export * from './xml-http-request';
 export * from './webgl';
 export * from './webgl2';
+export * from './crypto';
