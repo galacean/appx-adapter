@@ -4,7 +4,7 @@ export class Blob {
    * @param buffers only support zero index
    * @param type mimetype image/png image/webp...
    */
-  constructor (public readonly buffers: ArrayBuffer[], public readonly type: any) { }
+  constructor (public readonly buffers: ArrayBuffer[], public readonly type: string | Record<string, any> = 'image/png') { }
 
   arraybuffer (): Promise<ArrayBuffer> {
     return Promise.resolve(this.buffers[0]);
