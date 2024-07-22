@@ -1,6 +1,6 @@
 {
   "name": "@galacean/appx-adapter",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "Galacean Effects 的小程序/小游戏等适配器",
   "files": [
     "dist"
