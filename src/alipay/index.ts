@@ -1,6 +1,5 @@
-export * from '../core';
+import './initialize';
 import {
-  platform,
   atob,
   btoa,
   document,
@@ -72,14 +71,4 @@ export const window = {
     document.dispatchEvent(event);
   },
 };
-
-platform.createCanvas = my.createCanvas;
-platform.createImage = my.createImage;
-platform.createOffscreenCanvas = my.createOffscreenCanvas;
-platform.createSelectorQuery = my.createSelectorQuery;
-platform.getSystemInfoSync = my.getSystemInfoSync;
-platform.request = my.request;
-platform.startDeviceMotionListening = my.startDeviceMotionListening;
-platform.stopDeviceMotionListening = my.stopDeviceMotionListening;
-platform.onDeviceMotionChange = my.onDeviceMotionChange;
-platform.offDeviceMotionChange = my.offDeviceMotionChange;
+export * from '../core';
