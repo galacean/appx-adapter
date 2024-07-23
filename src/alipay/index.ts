@@ -1,5 +1,5 @@
+import './initialize';
 import {
-  platform,
   atob,
   btoa,
   document,
@@ -29,7 +29,6 @@ import {
   WebGL2RenderingContext,
 } from '../core';
 
-export * from '../core';
 export const window = {
   innerWidth: screen.availWidth,
   innerHeight: screen.availHeight,
@@ -72,14 +71,4 @@ export const window = {
     document.dispatchEvent(event);
   },
 };
-
-platform.createCanvas = my.createCanvas;
-platform.createImage = my.createImage;
-platform.createOffscreenCanvas = my.createOffscreenCanvas;
-platform.createSelectorQuery = my.createSelectorQuery;
-platform.getSystemInfoSync = my.getSystemInfoSync;
-platform.request = my.request;
-platform.startDeviceMotionListening = my.startDeviceMotionListening;
-platform.stopDeviceMotionListening = my.stopDeviceMotionListening;
-platform.onDeviceMotionChange = my.onDeviceMotionChange;
-platform.offDeviceMotionChange = my.offDeviceMotionChange;
+export * from '../core';
