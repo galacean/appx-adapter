@@ -1,18 +1,23 @@
+import { HTMLImageElement } from './constructor';
 import { platform } from './platform';
 import { getCanvas, isMiniGame } from './register';
 
-export class Image {
+export class Image extends HTMLImageElement {
+  image: any;
+
   constructor () {
-    let image;
+    super();
 
     if (isMiniGame()) {
-      image = platform.createImage();
+      this.image = platform.createImage();
     } else {
       const canvas = getCanvas();
 
-      image = canvas.createImage?.() ?? {};
+      this.image = canvas.createImage?.() ?? {};
     }
 
-    return image;
+    this.image.constructor = Image;
+
+    return this.image;
   }
 }
