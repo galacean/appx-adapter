@@ -23,6 +23,7 @@ export * from './register';
 export * from './node';
 export * from './request-animation-frame';
 export * from './screen';
+export * from './text-decoder';
 export * from './url';
 export * from './xml-http-request';
 export * from './webgl';

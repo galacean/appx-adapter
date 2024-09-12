@@ -27,6 +27,7 @@ import {
   XMLHttpRequest,
   WebGLRenderingContext,
   WebGL2RenderingContext,
+  TextDecoder,
 } from '../core';
 
 export const window = {
@@ -61,6 +62,7 @@ export const window = {
   URL,
   WebGLRenderingContext,
   WebGL2RenderingContext,
+  TextDecoder,
   addEventListener (type: string, listener: () => void, options = {}) {
     document.addEventListener(type, listener, options);
   },
