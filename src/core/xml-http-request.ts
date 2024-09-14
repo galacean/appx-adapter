@@ -1,4 +1,5 @@
 // @ts-nocheck
+import { isInstanceOf } from './instanceof';
 import { platform } from './platform';
 import { EventTarget } from './event-target';
 
@@ -138,7 +139,7 @@ export class XMLHttpRequest extends EventTarget {
         if (resolved) { return; }
         resolved = true;
         statusCode = statusCode === undefined ? 200 : statusCode;
-        if (typeof data !== 'string' && !(data instanceof ArrayBuffer) && dataType !== 'json') {
+        if (typeof data !== 'string' && !(isInstanceOf(data, ArrayBuffer)) && dataType !== 'json') {
           try {
             data = JSON.stringify(data);
           // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -155,7 +156,7 @@ export class XMLHttpRequest extends EventTarget {
 
         this.response = data;
 
-        if (data instanceof ArrayBuffer) {
+        if (isInstanceOf(data, ArrayBuffer)) {
           Object.defineProperty(this, 'responseText', {
             enumerable: true,
             configurable: true,
