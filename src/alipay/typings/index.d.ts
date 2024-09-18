@@ -9,4 +9,5 @@ declare namespace my {
   export function stopDeviceMotionListening (): any
   export function onDeviceMotionChange (): any
   export function offDeviceMotionChange (): any
+  export const renderTarget: string
 }
