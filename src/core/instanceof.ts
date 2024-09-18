@@ -1,7 +1,24 @@
-// @ts-expect-error
 const renderTarget = typeof my !== 'undefined' ? my.renderTarget : undefined;
 const inMiniPlugin = renderTarget === 'web' && typeof getApp !== 'function';
-const isGlobalConstructor = function (k: any): boolean {
+
+export function isInstanceOf (a: any, b: any) {
+  const result = a instanceof b;
+
+  if (inMiniPlugin) {
+    if (isGlobalConstructor(b)) {
+      const aType = Object.prototype.toString.call(a);
+
+      if (aType === '[object ' + b.name + ']') {
+        return true;
+      }
+    }
+
+  }
+
+  return result;
+}
+
+function isGlobalConstructor (k: any): boolean {
   if (typeof k === 'function' && typeof k.name === 'string') {
     let gk;
 
@@ -39,22 +56,4 @@ const isGlobalConstructor = function (k: any): boolean {
   }
 
   return false;
-};
-
-export function isInstanceOf (a: any, b: any) {
-  const result = a instanceof b;
-
-  if (result) {
-    return result;
-  } else if (inMiniPlugin) {
-    if (isGlobalConstructor(b)) {
-      const aType = Object.prototype.toString.call(a);
-
-      if (aType === '[object ' + b.name + ']') {
-        return true;
-      }
-    }
-
-    return result;
-  }
 }
