@@ -173,7 +173,7 @@ export class XMLHttpRequest extends EventTarget {
       };
 
       const onFail = e => {
-        const errMsg = e.message || e.errorMessage;
+        const errMsg = e.message || e.errorMessage || e.errMsg;
 
         // TODO 规范错误
         if (resolved) { return; }
