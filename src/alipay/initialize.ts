@@ -10,3 +10,4 @@ platform.startDeviceMotionListening = my.startDeviceMotionListening;
 platform.stopDeviceMotionListening = my.stopDeviceMotionListening;
 platform.onDeviceMotionChange = my.onDeviceMotionChange;
 platform.offDeviceMotionChange = my.offDeviceMotionChange;
+platform.getFileSystemManager = my.getFileSystemManager;

@@ -38,4 +38,5 @@ export const platform = {
   stopDeviceMotionListening: () => { },
   onDeviceMotionChange: (listener: (event: any) => void) => { },
   offDeviceMotionChange: (listener: (event: any) => void) => { },
+  getFileSystemManager: () => { },
 };
