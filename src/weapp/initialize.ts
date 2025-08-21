@@ -12,3 +12,4 @@ platform.startDeviceMotionListening = (wx as unknown as WechatMiniprogram.Wx).st
 platform.stopDeviceMotionListening = (wx as unknown as WechatMiniprogram.Wx).stopDeviceMotionListening;
 platform.onDeviceMotionChange = (wx as unknown as WechatMiniprogram.Wx).onDeviceMotionChange;
 platform.offDeviceMotionChange = (wx as unknown as WechatMiniprogram.Wx).offDeviceMotionChange;
+platform.getFileSystemManager = (wx as unknown as WechatMiniprogram.Wx).getFileSystemManager;
