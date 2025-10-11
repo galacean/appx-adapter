@@ -9,7 +9,7 @@ export const platform = {
       screenHeight: 1,
       windowWidth: 1,
       windowHeight: 1,
-    };
+    } as Partial<WechatMiniprogram.SystemInfo>;
   },
   createCanvas: () => {
     return {

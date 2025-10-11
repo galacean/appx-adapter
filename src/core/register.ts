@@ -9,7 +9,7 @@ export interface registerCanvasOptions {
   /**
    * canvas 的 ID 或 canvas 对象
    */
-  id?: string,
+  id?: unknown,
   /**
    * 是否为小游戏
    * @default false
