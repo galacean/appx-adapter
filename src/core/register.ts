@@ -7,6 +7,10 @@ import * as Mixin from './utils/mixin';
  */
 export interface registerCanvasOptions {
   /**
+   * 组件或页面的 this 上下文，微信小程序组件需要传递
+   */
+  context?: any,
+  /**
    * canvas 的 ID 或 canvas 对象
    */
   id?: unknown,
@@ -37,7 +41,7 @@ export async function registerCanvas (options: registerCanvasOptions = {}) {
     if (isMiniGame) {
       canvas = platform.createCanvas();
     } else {
-      canvas = await getCanvasById(id);
+      canvas = await getCanvasById(id, options.context);
     }
   } else {
     canvas = id;
@@ -88,11 +92,17 @@ export function registerOffscreenCanvas (canvas: any, elementLevel?: number) {
   return canvas;
 }
 
-async function getCanvasById (id: string) {
+async function getCanvasById (id: string, context?: any) {
   return new Promise((resolve, reject) => {
-    platform.createSelectorQuery()
+    let query = platform.createSelectorQuery();
+
+    if (context) {
       // @ts-expect-error
-      .select(id).node()
+      query = query.in(context);
+    }
+
+    // @ts-expect-error
+    query.select(id).node()
       .select(id).boundingClientRect()
       // @ts-expect-error
       .exec(res => {
